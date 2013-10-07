@@ -16,7 +16,7 @@ end
 
 desc 'run knife test'
 task :knife => :prepare do
-  sh 'bundle', 'exec', 'knife', 'cookbook', 'test', TARGET,
+  sh 'knife', 'cookbook', 'test', TARGET,
      '--config',        '.knife.rb',
      '--cookbook-path', 'cookbooks'
 end
