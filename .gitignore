@@ -1,4 +1,7 @@
 .bundle
+Berksfile.lock
+Gemfile.lock
 cookbooks
 test/.bundle
+test/Gemfile.lock
 test/vendor
