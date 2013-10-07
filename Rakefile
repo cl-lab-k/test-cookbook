@@ -4,23 +4,21 @@ TARGET='test-cookbook'
 
 task :prepare do
   sh 'berks',  'install', '--path', 'cookbooks'
-  sh 'bundle', 'install', '--path', 'vendor', '--gemfile=test/Gemfile'
+  sh 'bundle', 'install', '--path', 'vendor'
 
   at_exit { Rake::Task[ :clean ].invoke if $!.nil? }
 end
 
 task :clean do
   rm_rf 'cookbooks'
-  rm_rf 'test/vendor'
+  rm_rf 'vendor'
 end
 
 desc 'run knife test'
 task :knife => :prepare do
-  Dir.chdir 'test' do
-    sh 'bundle', 'exec', 'knife', 'cookbook', 'test', TARGET,
-       '--config',        '../.knife.rb',
-       '--cookbook-path', '../cookbooks'
-  end
+  sh 'bundle', 'exec', 'knife', 'cookbook', 'test', TARGET,
+     '--config',        '.knife.rb',
+     '--cookbook-path', 'cookbooks'
 end
 
 desc 'run foodcritic'
