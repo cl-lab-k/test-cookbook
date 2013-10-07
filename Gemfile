@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rake'
 gem 'berkshelf', '~> 2.0'
 gem 'chef', '~> 11'
 gem 'chefspec'
