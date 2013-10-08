@@ -35,5 +35,5 @@ task :chefspec => :prepare do
   end
 end
 
-task :test => [ :knife, :foodcritic, :chefspec ]
+task :test => [ :foodcritic, :chefspec ]
 task :default => :test
