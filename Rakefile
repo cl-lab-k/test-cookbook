@@ -4,8 +4,6 @@ TARGET='test-cookbook'
 
 task :prepare do
   sh 'berks',  'install', '--path', 'cookbooks'
-  sh 'bundle', 'install', '--path', 'vendor'
-
   at_exit { Rake::Task[ :clean ].invoke if $!.nil? }
 end
 
