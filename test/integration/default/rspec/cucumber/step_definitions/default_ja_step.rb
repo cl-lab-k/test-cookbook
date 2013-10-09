@@ -1,5 +1,4 @@
 # encoding: UTF-8
-# http://qiita.com/sawanoboly/items/48fe830d2ee3b6c87bf5
 
 require 'open-uri'
 
